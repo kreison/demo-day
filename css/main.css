@@ -1,0 +1,21 @@
+.wrapper{
+  background: url("../img/unsplash.png") center no-repeat;
+  display: flex;
+}
+.form{
+  opacity: 1;
+  background: var(--background-form);
+}
+.form h3{
+  font-size: 24px;
+}
+.form form{
+  display: flex;
+}
+input{
+  height: 44px;
+}
+#btn{
+  width: 306px;
+  background: var(--color-button);
+}

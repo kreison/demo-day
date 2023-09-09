@@ -27,6 +27,12 @@ var bindPostData = (form, callback) => {
       event.preventDefault()
       const formData = await new FormData(form)
       const json = callback(formData);
+      if (password.value.length < 8) {
+        return toast('должно быть минимум 8 символов в пароли')
+      }
+      if(password.value !== passwordRepeat.value) {
+          return toast('Пароли несовпали')
+      }
       checksFields(name, password, json)
   }
 }
@@ -34,23 +40,18 @@ var bindPostData = (form, callback) => {
 
 function checksFields(name, password, json){
   if (name.value === '') {
-    return toast('Введите ваше имя!')
+    return toast('Введиет ваше имя!')
   }
   if (password.value === '') {
       return toast('Вы не придумали пароль!')
   }
-  if (password.value.length < 8) {
-      return toast('должно быть минимум 8 символов в пароли')
+  if (password.value === passwordRepeat.value) {
+    return postData('https://7fce-109-201-165-30.ngrok-free.app/api/v1/users/register/', json)
   }
   if (passwordRepeat.value === '') {
       return toast('Вы не повторили пароль!')
   }
-  if (password.value === passwordRepeat.value) {
-      return postData('https://3c5a-109-201-165-30.ngrok-free.app/api/v1/users/register/', json)
-  }
-  else {
-      return toast('Пароли не совпали')
-  }
+  
 }
 
 function checksResponseBackend (response){

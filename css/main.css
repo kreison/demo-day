@@ -1,23 +1,11 @@
-.wrapper{
-  background: url("../img/unsplash.png") center no-repeat;
-  display: flex;
-}
+/* need */
 .form{
   opacity: 1;
   background: var(--background-form);
 }
-.form h3{
-  font-size: 24px;
-}
+
 .form form{
   display: flex;
-}
-input{
-  height: 44px;
-}
-#btn{
-  width: 306px;
-  background: var(--color-button);
 }
 
 @media (max-width: 460px) {
@@ -28,4 +16,23 @@ input{
   .inputs, input, #btn {
       width: 100%;
   }
+}
+
+/* interactive */
+.wrapper{
+  display: flex;
+  background: url("../img/unsplash.png") center no-repeat;
+}
+
+.form h3{
+  font-size: 24px;
+}
+
+input{
+  height: 44px;
+}
+
+#btn{
+  width: 306px;
+  background: var(--color-button);
 }

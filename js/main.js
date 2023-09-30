@@ -4,7 +4,16 @@ bindPostData(form, function(formData){
         obj[i] = input
     })
     const dataToBackend = JSON.stringify(obj);
-    return dataToBackend
+    if (password.value.length < 8) {
+        toast('должно быть минимум 8 символов в пароли')
+        return {status: 0, data: dataToBackend}
+    }
+    if(password.value !== passwordRepeat.value) {
+        toast('Пароли несовпали')
+        return {status: 0, data: dataToBackend}
+    }
+    return {status: 1, data: dataToBackend}
+
 })
 
 const postData = async(url, dataToBackend) => {

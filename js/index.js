@@ -27,13 +27,9 @@ var bindPostData = (form, callback) => {
       event.preventDefault()
       const formData = await new FormData(form)
       const json = callback(formData);
-      if (password.value.length < 8) {
-        return toast('должно быть минимум 8 символов в пароли')
+      if (json.status === 1){
+        checksFields(name, password, json.data)
       }
-      if(password.value !== passwordRepeat.value) {
-          return toast('Пароли несовпали')
-      }
-      checksFields(name, password, json)
   }
 }
 
@@ -46,7 +42,7 @@ function checksFields(name, password, json){
       return toast('Вы не придумали пароль!')
   }
   if (password.value === passwordRepeat.value) {
-    return postData('https://7fce-109-201-165-30.ngrok-free.app/api/v1/users/register/', json)
+    return postData('https://9fc4-109-201-165-30.ngrok-free.app/api/v1/users/register/', json)
   }
   if (passwordRepeat.value === '') {
       return toast('Вы не повторили пароль!')

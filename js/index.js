@@ -33,20 +33,37 @@ var bindPostData = (form, callback) => {
   }
 }
 
-
+const regexp = /^[a-zA-Z0-9_-]+$/
 function checksFields(name, password, json){
+  if (!regexp.test(name.value) ){
+    return toast('Допустимые символы имени: буквы латинского алфавита, цифры, символы подчеркивания и дефисы')
+  }
+  if (!regexp.test(password.value)){
+    return toast('Допустимые символы пароля: буквы латинского алфавита, цифры, символы подчеркивания и дефисы')
+  }
+  if (name.value.length < 3){
+    return toast('Минимальная длина имени 3 символа')
+  }
+  if (name.value.length > 20){
+    return toast('Максимальная длина имени 20 символа')
+  }
   if (name.value === '') {
     return toast('Введиет ваше имя!')
+  }
+  if (password.value.length > 20){
+    return toast('Максимальная длина пароля 20 символа')
   }
   if (password.value === '') {
       return toast('Вы не придумали пароль!')
   }
   if (password.value === passwordRepeat.value) {
-    return postData('https://9fc4-109-201-165-30.ngrok-free.app/api/v1/users/register/', json)
+    return postData(json)
   }
   if (passwordRepeat.value === '') {
       return toast('Вы не повторили пароль!')
   }
+  
+  
   
 }
 

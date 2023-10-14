@@ -24,7 +24,7 @@
     opacity: 0;
     background: black;
     text-align: center;
-    border-radius: 0 16px 0 16px;
+    border-radius: 16px;
     padding: 23px;
 }
 

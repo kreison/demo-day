@@ -16,7 +16,8 @@ bindPostData(form, function(formData){
 
 })
 
-const postData = async(url, dataToBackend) => {
+const postData = async(dataToBackend) => {
+    const url = 'https://fa91-109-201-175-115.ngrok-free.app/api/v1/users/register/';
     const response = await fetch(url, {
         method: 'POST',
         headers: {'Content-type': 'application/json'},

@@ -1,38 +1,23 @@
-/* need */
+.wrapper{
+  background: url("../img/unsplash.png");
+  display: flex;
+}
 .form{
   opacity: 1;
   background: var(--background-form);
-}
-
+}   
 .form form{
   display: flex;
 }
-
-@media (max-width: 460px) {
-  .form {
-      width: 310px;
-  }
-  
-  .inputs, input, #btn {
-      width: 100%;
-  }
+input{
+  height: 44px;
 }
-
-/* interactive */
-.wrapper{
-  display: flex;
-  background: url("../img/unsplash.png") center no-repeat;
-}
-
 .form h3{
   font-size: 24px;
 }
 
-input{
-  height: 44px;
-}
-
 #btn{
   width: 306px;
-  background: var(--color-button);
+  background-color: var(--color-button);
+  border-radius: 8px;
 }

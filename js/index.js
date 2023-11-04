@@ -38,12 +38,6 @@ function checksFields(name, password, json){
   if (!regexp.test(name.value) ){
     return toast('Допустимые символы имени: буквы латинского алфавита, цифры, символы подчеркивания и дефисы')
   }
-  if (!regexp.test(password.value)){
-    return toast('Допустимые символы пароля: буквы латинского алфавита, цифры, символы подчеркивания и дефисы')
-  }
-  if (name.value.length < 3){
-    return toast('Минимальная длина имени 3 символа')
-  }
   if (name.value.length > 20){
     return toast('Максимальная длина имени 20 символа')
   }

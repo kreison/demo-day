@@ -5,6 +5,7 @@
 .form{
   opacity: 1;
   background: var(--background-form);
+  backdrop-filter: blur(4px); 
 }   
 .form form{
   display: flex;
